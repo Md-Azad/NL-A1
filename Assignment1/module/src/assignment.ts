@@ -45,103 +45,13 @@ const result = filterByRating(books);
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 // console.log(result);
 
-// Task 3: Object Types, Type Alias, & Literal Types
-// Objective: Define a structured Person object using Type Aliases.
 
-type Person ={
-    Name:string;
-    Address:string;
-    Hair:string;
-    Eye:string;
-    Color:string,
-    Income:number;
-    Expense:number;
-    Hobbies:string;
-    FamilyMembers:number,
-    Job:"yes"| "no";
-    Skills:{html:boolean;css:boolean,js:boolean};
-    MaritalStatus:boolean;
-    Friends:boolean;
+// Description: Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+
+function concatenateArrays<T>(...arrays: T[][]):T[]{
+    return ([] as T[]).concat(...arrays);  
 }
 
-const person:Person={
-    Name:"Azad",
-    Address:"Dhaka",
-    Hair:"Black",
-    Eye:"brown", 
-    Color:"Brown",
-    Income:12000,
-    Expense:9000,
-    Hobbies: "Reading Books",
-    Job: "yes",
-    Skills:{html:true, css:false, js:true},
-    MaritalStatus:true,
-    Friends:true,
-    FamilyMembers:5
-
-}
-// console.log(person);
-
-
-// Task 4: Union and Intersection Types
-// Objective: Create union and intersection types using interfaces.
-
-// Instructions:
-
-// Define interfaces Book and Magazine.
-// Create:
-// A type that is a union of Book and Magazine.
-// A type that is an intersection of Book and Magazine.
-
-interface Book{
-    Name:string;
-    pages:number;
-    author:string;
-    publish:boolean;
-}
-
-interface Magazine{
-    name:string;
-    pages:number;
-    price:number;
-    publish:boolean;
-}
-
-// unior type
-type Documents = Book | Magazine;
-// intersection type 
-
-type IntersectedDocuments = Book & Magazine;
-// Task 5: Function Type
-// Objective: Write a function that reverses a string.
-
-// Instructions:
-
-// Write a function reverseString that:
-// Takes a single string argument.
-// Returns the string in reverse order.
-// Example:
-// Input: "hello"
-// Output: "olleh"
-
-function reverseString (input:string):string{
-    const names: string[] = [];
-    let finalOutput: string="";
-
-    const splitString = input.split("");
-
-    for(let i:number=splitString.length-1; i>=0; i--){
-         names.push(splitString[i])
-    }
-    for(let i:number=0; i<names.length; i++){
-         finalOutput +=  [names[i]]
-    }
-
-    return finalOutput;
-    
-}
-
-const reversedString= reverseString("hello")
-console.log(reversedString);
+console.log(concatenateArrays([1, 2], [3, 4], [5])); 
 
 

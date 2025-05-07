@@ -25,41 +25,10 @@ const books = [
     { title: "Book C", rating: 5.0 }
 ];
 const result = filterByRating(books);
-const person = {
-    Name: "Azad",
-    Address: "Dhaka",
-    Hair: "Black",
-    Eye: "brown",
-    Color: "Brown",
-    Income: 12000,
-    Expense: 9000,
-    Hobbies: "Reading Books",
-    Job: "yes",
-    Skills: { html: true, css: false, js: true },
-    MaritalStatus: true,
-    Friends: true,
-    FamilyMembers: 5
-};
-// Task 5: Function Type
-// Objective: Write a function that reverses a string.
-// Instructions:
-// Write a function reverseString that:
-// Takes a single string argument.
-// Returns the string in reverse order.
-// Example:
-// Input: "hello"
-// Output: "olleh"
-function reverseString(input) {
-    const names = [];
-    let finalOutput = "";
-    const splitString = input.split("");
-    for (let i = splitString.length - 1; i >= 0; i--) {
-        names.push(splitString[i]);
-    }
-    for (let i = 0; i < names.length; i++) {
-        finalOutput += [names[i]];
-    }
-    return finalOutput;
+// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
+// console.log(result);
+// Description: Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+function concatenateArrays(...arrays) {
+    return [].concat(...arrays);
 }
-const reversedString = reverseString("hello");
-console.log(reversedString);
+console.log(concatenateArrays([1, 2], [3, 4], [5]));
