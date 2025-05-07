@@ -54,8 +54,8 @@ class Car extends Vehicle {
     }
 }
 const car = new Car("bmw", 2012, "Bmw 7");
-car.getModel();
-car.getInfo();
+// car.getModel();
+// car.getInfo()
 // Description: Write a function that takes a string | number and returns:
 // The length if it's a string
 // The number multiplied by 2 if it's a number
@@ -66,6 +66,24 @@ function processValue(value) {
     if (typeof value === "number") {
         return value * 2;
     }
-    return 0;
 }
 const finalvalue = processValue("asd");
+function getMostExpensiveProduct(products) {
+    if (products.length !== 0) {
+        const highestPrice = products.reduce((prev, cur) => {
+            if (prev.price > cur.price) {
+                return prev;
+            }
+            return cur;
+        });
+        return highestPrice;
+    }
+    return null;
+}
+const products = [
+    { name: "Pen", price: 100 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+];
+const outcome = getMostExpensiveProduct(products);
+console.log(outcome);

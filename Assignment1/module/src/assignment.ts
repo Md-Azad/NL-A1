@@ -88,8 +88,8 @@ class Car extends Vehicle{
 }
 
 const car = new Car("bmw", 2012, "Bmw 7")
-car.getModel();
-car.getInfo()
+// car.getModel();
+// car.getInfo()
 
 
 
@@ -98,15 +98,47 @@ car.getInfo()
 // The length if it's a string
 // The number multiplied by 2 if it's a number
 
-function processValue(value:string|number):number{
+function processValue(value:string|number):number|undefined{
     if(typeof value ==="string"){
         return value.length;
     }
     if(typeof value ==="number"){
         return value*2;
     }
-    return 0;
+  
 }
 
 const finalvalue= processValue("asd")
+
+
+// Description: Define an interface Product and create a function to find the product with the highest price in an array. If the array is empty, return null.
+
+interface Product {
+    name:string;
+    price:number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null{
+    if(products.length!==0){
+        const highestPrice = products.reduce((prev,cur)=> {
+            if(prev.price>cur.price){
+                return prev;
+            }
+            return cur;
+        })
+        return highestPrice;
+        
+    }
+    return null;
+}
+
+const products:Product[] = [
+  { name: "Pen", price: 100 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 }
+];
+
+const outcome = getMostExpensiveProduct(products)
+console.log(outcome);
+
 
