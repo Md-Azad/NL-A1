@@ -85,5 +85,21 @@ const products = [
     { name: "Notebook", price: 25 },
     { name: "Bag", price: 50 }
 ];
-const outcome = getMostExpensiveProduct(products);
-console.log(outcome);
+getMostExpensiveProduct(products);
+// Define an enum Day for the days of the week.
+// Create a function that returns "Weekday" or "Weekend" based on the input day.
+var Day;
+(function (Day) {
+    Day["Monday"] = "Weekday";
+    Day["Tuesday"] = "Weekday";
+    Day["Wednesday"] = "Weekday";
+    Day["Thursday"] = "Weekday";
+    Day["Friday"] = "Weekday";
+    Day["Saturday"] = "Weekend";
+    Day["Sunday"] = "Weekend";
+})(Day || (Day = {}));
+function getDayType(day) {
+    return day;
+}
+console.log(getDayType(Day.Monday)); // Output: "Weekday"
+console.log(getDayType(Day.Sunday)); // Output: "Weekend"
