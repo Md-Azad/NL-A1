@@ -14,7 +14,7 @@ function formatString(input: string, toUpper?: boolean):string{
 const result1 = formatString("Hello");          // Output: "HELLO"
 const result2= formatString("Hello", true);   // Output: "HELLO"
 const resutl3 = formatString("Hello", false);  // Output: "hello"
-console.log(result1, result2, resutl3);
+// console.log(result1, result2, resutl3);
 
 // Description: Create a function that filters an array
 //  of objects by the rating property, returning only items with a rating of 4 or more.
@@ -43,7 +43,7 @@ const books = [
 
 const result = filterByRating(books); 
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
-console.log(result);
+// console.log(result);
 
 // Task 3: Object Types, Type Alias, & Literal Types
 // Objective: Define a structured Person object using Type Aliases.
@@ -80,7 +80,7 @@ const person:Person={
     FamilyMembers:5
 
 }
-console.log(person);
+// console.log(person);
 
 
 // Task 4: Union and Intersection Types
@@ -112,6 +112,36 @@ type Documents = Book | Magazine;
 // intersection type 
 
 type IntersectedDocuments = Book & Magazine;
+// Task 5: Function Type
+// Objective: Write a function that reverses a string.
 
+// Instructions:
+
+// Write a function reverseString that:
+// Takes a single string argument.
+// Returns the string in reverse order.
+// Example:
+// Input: "hello"
+// Output: "olleh"
+
+function reverseString (input:string):string{
+    const names: string[] = [];
+    let finalOutput: string="";
+
+    const splitString = input.split("");
+
+    for(let i:number=splitString.length-1; i>=0; i--){
+         names.push(splitString[i])
+    }
+    for(let i:number=0; i<names.length; i++){
+         finalOutput +=  [names[i]]
+    }
+
+    return finalOutput;
+    
+}
+
+const reversedString= reverseString("hello")
+console.log(reversedString);
 
 

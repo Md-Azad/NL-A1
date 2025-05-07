@@ -11,7 +11,6 @@ function formatString(input, toUpper) {
 const result1 = formatString("Hello"); // Output: "HELLO"
 const result2 = formatString("Hello", true); // Output: "HELLO"
 const resutl3 = formatString("Hello", false); // Output: "hello"
-console.log(result1, result2, resutl3);
 function filterByRating(items) {
     const output = items.filter((item) => {
         if (item.rating >= 4) {
@@ -26,8 +25,6 @@ const books = [
     { title: "Book C", rating: 5.0 }
 ];
 const result = filterByRating(books);
-// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
-console.log(result);
 const person = {
     Name: "Azad",
     Address: "Dhaka",
@@ -43,4 +40,26 @@ const person = {
     Friends: true,
     FamilyMembers: 5
 };
-console.log(person);
+// Task 5: Function Type
+// Objective: Write a function that reverses a string.
+// Instructions:
+// Write a function reverseString that:
+// Takes a single string argument.
+// Returns the string in reverse order.
+// Example:
+// Input: "hello"
+// Output: "olleh"
+function reverseString(input) {
+    const names = [];
+    let finalOutput = "";
+    const splitString = input.split("");
+    for (let i = splitString.length - 1; i >= 0; i--) {
+        names.push(splitString[i]);
+    }
+    for (let i = 0; i < names.length; i++) {
+        finalOutput += [names[i]];
+    }
+    return finalOutput;
+}
+const reversedString = reverseString("hello");
+console.log(reversedString);
