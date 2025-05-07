@@ -31,4 +31,41 @@ const result = filterByRating(books);
 function concatenateArrays(...arrays) {
     return [].concat(...arrays);
 }
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
+// console.log(concatenateArrays([1, 2], [3, 4], [5])); 
+// Create a Vehicle class with private make and year properties and a getInfo() method.
+// Create a Car class extending Vehicle, adding a private model property and a getModel() method.
+class Vehicle {
+    constructor(make, year) {
+        this.make = make;
+        this.year = year;
+    }
+    getInfo() {
+        console.log(`this vehicle is made by: ${this.make} in the year of: ${this.year}`);
+    }
+}
+class Car extends Vehicle {
+    constructor(make, year, model) {
+        super(make, year);
+        this.model = model;
+    }
+    getModel() {
+        console.log(this.model);
+        ;
+    }
+}
+const car = new Car("bmw", 2012, "Bmw 7");
+car.getModel();
+car.getInfo();
+// Description: Write a function that takes a string | number and returns:
+// The length if it's a string
+// The number multiplied by 2 if it's a number
+function processValue(value) {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    if (typeof value === "number") {
+        return value * 2;
+    }
+    return 0;
+}
+const finalvalue = processValue("asd");
