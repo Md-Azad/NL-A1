@@ -1,5 +1,14 @@
 "use strict";
 // Description: Create a function that takes a string and an optional boolean.
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 // If the boolean is true or not provided, return the string in uppercase.
 // If the boolean is false, return the string in lowercase.
 function formatString(input, toUpper) {
@@ -101,5 +110,23 @@ var Day;
 function getDayType(day) {
     return day;
 }
-console.log(getDayType(Day.Monday)); // Output: "Weekday"
-console.log(getDayType(Day.Sunday)); // Output: "Weekend"
+// console.log(getDayType(Day.Monday));   // Output: "Weekday"
+// console.log(getDayType(Day.Sunday));   // Output: "Weekend"
+// Description: Create an async function that:
+// Returns the square of a number after 1 second
+// Rejects if the number is negative
+function squareAsynce(value) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return new Promise((resolve, reject) => {
+            if (value > 1) {
+                setTimeout(() => {
+                    resolve(value * value);
+                }, 1000);
+            }
+            else {
+                reject("Error: Negative number not allowed");
+            }
+        });
+    });
+}
+squareAsynce(-5).then(console.log).catch(console.error);
