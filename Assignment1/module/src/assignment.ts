@@ -93,4 +93,25 @@ console.log(person);
 // A type that is a union of Book and Magazine.
 // A type that is an intersection of Book and Magazine.
 
+interface Book{
+    Name:string;
+    pages:number;
+    author:string;
+    publish:boolean;
+}
+
+interface Magazine{
+    name:string;
+    pages:number;
+    price:number;
+    publish:boolean;
+}
+
+// unior type
+type Documents = Book | Magazine;
+// intersection type 
+
+type IntersectedDocuments = Book & Magazine;
+
+
 
