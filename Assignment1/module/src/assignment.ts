@@ -45,4 +45,52 @@ const result = filterByRating(books);
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 console.log(result);
 
+// Task 3: Object Types, Type Alias, & Literal Types
+// Objective: Define a structured Person object using Type Aliases.
+
+type Person ={
+    Name:string;
+    Address:string;
+    Hair:string;
+    Eye:string;
+    Color:string,
+    Income:number;
+    Expense:number;
+    Hobbies:string;
+    FamilyMembers:number,
+    Job:"yes"| "no";
+    Skills:{html:boolean;css:boolean,js:boolean};
+    MaritalStatus:boolean;
+    Friends:boolean;
+}
+
+const person:Person={
+    Name:"Azad",
+    Address:"Dhaka",
+    Hair:"Black",
+    Eye:"brown", 
+    Color:"Brown",
+    Income:12000,
+    Expense:9000,
+    Hobbies: "Reading Books",
+    Job: "yes",
+    Skills:{html:true, css:false, js:true},
+    MaritalStatus:true,
+    Friends:true,
+    FamilyMembers:5
+
+}
+console.log(person);
+
+
+// Task 4: Union and Intersection Types
+// Objective: Create union and intersection types using interfaces.
+
+// Instructions:
+
+// Define interfaces Book and Magazine.
+// Create:
+// A type that is a union of Book and Magazine.
+// A type that is an intersection of Book and Magazine.
+
 
