@@ -11,11 +11,11 @@
 
 # What is the use of enums in TypeScript? Example of a numeric and string enum.
 
--Some use of enums:
-_ Preseved the values to a predefined set.
-_ A central place for all constants for more readability and easy maintance.
-_ To get auto increment behavior.
-_ Self documenting code .
+    - Some use of enums:
+    _ Preseved the values to a predefined set.
+    _ A central place for all constants for more readability and easy maintance.
+    _ To get auto increment behavior.
+    _ Self documenting code .
 
 ## Example of numeric enum
 
