@@ -1,5 +1,4 @@
 "use strict";
-// Description: Create a function that takes a string and an optional boolean.
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9,8 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// If the boolean is true or not provided, return the string in uppercase.
-// If the boolean is false, return the string in lowercase.
 function formatString(input, toUpper) {
     if (toUpper || toUpper === undefined) {
         return `${input.toUpperCase()}`;
@@ -34,22 +31,18 @@ const books = [
     { title: "Book C", rating: 5.0 }
 ];
 const result = filterByRating(books);
-// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
-// console.log(result);
-// Description: Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+// ---------------
 function concatenateArrays(...arrays) {
     return [].concat(...arrays);
 }
-// console.log(concatenateArrays([1, 2], [3, 4], [5])); 
-// Create a Vehicle class with private make and year properties and a getInfo() method.
-// Create a Car class extending Vehicle, adding a private model property and a getModel() method.
+// -----------
 class Vehicle {
     constructor(make, year) {
         this.make = make;
         this.year = year;
     }
     getInfo() {
-        console.log(`this vehicle is made by: ${this.make} in the year of: ${this.year}`);
+        return `this vehicle is made by: ${this.make} in the year of: ${this.year}`;
     }
 }
 class Car extends Vehicle {
@@ -58,16 +51,14 @@ class Car extends Vehicle {
         this.model = model;
     }
     getModel() {
-        console.log(this.model);
+        return this.model;
         ;
     }
 }
 const car = new Car("bmw", 2012, "Bmw 7");
-// car.getModel();
-// car.getInfo()
-// Description: Write a function that takes a string | number and returns:
-// The length if it's a string
-// The number multiplied by 2 if it's a number
+car.getModel();
+car.getInfo();
+// ------------
 function processValue(value) {
     if (typeof value === "string") {
         return value.length;
@@ -76,7 +67,7 @@ function processValue(value) {
         return value * 2;
     }
 }
-const finalvalue = processValue("asd");
+processValue("asd");
 function getMostExpensiveProduct(products) {
     if (products.length !== 0) {
         const highestPrice = products.reduce((prev, cur) => {
@@ -95,8 +86,7 @@ const products = [
     { name: "Bag", price: 50 }
 ];
 getMostExpensiveProduct(products);
-// Define an enum Day for the days of the week.
-// Create a function that returns "Weekday" or "Weekend" based on the input day.
+// -----------
 var Day;
 (function (Day) {
     Day["Monday"] = "Weekday";
@@ -110,11 +100,7 @@ var Day;
 function getDayType(day) {
     return day;
 }
-// console.log(getDayType(Day.Monday));   // Output: "Weekday"
-// console.log(getDayType(Day.Sunday));   // Output: "Weekend"
-// Description: Create an async function that:
-// Returns the square of a number after 1 second
-// Rejects if the number is negative
+// ------------
 function squareAsynce(value) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
